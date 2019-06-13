@@ -1,4 +1,3 @@
-
 const initialState = {
 
   mens: {
@@ -14,10 +13,14 @@ const initialState = {
   kids: {
     banner: [], 
     data: []
-  }
+  },
+
+  isFetching: false,
+
+  isError: false
 
 }
-const brandsReducer = (state = initialState, action) => {
+const asyncBrandsReducer = (state = initialState, action) => {
 
   switch(action.type){
 
@@ -27,4 +30,4 @@ const brandsReducer = (state = initialState, action) => {
 
 }
 
-export default brandsReducer;
+export default asyncBrandsReducer;

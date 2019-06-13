@@ -1,17 +1,16 @@
-import { createStore, combineReducers } from 'redux';
-import brandsReducer from './brandsReducer';
-
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import asyncBrandsReducer from './asyncBrandsReducer';
+import thunk from "redux-thunk";
 
 const rootReducer = combineReducers({
 
-  brands: brandsReducer
+  brands: asyncBrandsReducer
 })
 
-
-const store = createStore(rootReducer);
-
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 export default store;
+
 
 
 
